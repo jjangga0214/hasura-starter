@@ -1,24 +1,24 @@
-version: '3.7'
+version: "3.7"
 
 services:
-  db:
+  postgres:
     image: postgres
     restart: always
     environment:
-      POSTGRES_DB: ${DB_DATABASE}
-      POSTGRES_USER: ${DB_USERNAME}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-      PGTZ: ${DB_TIMEZONE}
+      POSTGRES_DB: ${POSTGRES_DATABASE}
+      POSTGRES_USER: ${POSTGRES_USERNAME}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      PGTZ: ${POSTGRES_TIMEZONE}
     ports:
       - target: 5432
-        published: ${DB_ENDPOINT_PORT}
+        published: ${POSTGRES_ENDPOINT_PORT}
         protocol: tcp
         mode: host
     volumes:
-      ## To executes ['initialization scripts'](https://hub.docker.com/_/postgres), 
+      ## To executes ['initialization scripts'](https://hub.docker.com/_/postgres),
       ## uncomment the next line, create ./data directory, and add .sh or .sql files under ./data
       # - ./data:/docker-entrypoint-initdb.d
-      - db_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
   graphql-engine:
     image: hasura/graphql-engine:v1.0.0-beta.9.cli-migrations
     ports:
@@ -29,15 +29,13 @@ services:
     volumes:
       - ./hasura/migrations:/hasura-migrations
     depends_on:
-      - 'db'
+      - "postgres"
     restart: always
     environment:
-      HASURA_GRAPHQL_DATABASE_URL: 'postgres://${DB_USERNAME}:${DB_PASSWORD}@db:5432/${DB_DATABASE}'
-      HASURA_GRAPHQL_ENABLE_CONSOLE: 'true' # set to "false" to disable console
+      HASURA_GRAPHQL_DATABASE_URL: "postgres://${POSTGRES_USERNAME}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DATABASE}"
+      HASURA_GRAPHQL_ENABLE_CONSOLE: ${HASURA_GRAPHQL_ENABLE_CONSOLE}
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: ${HASURA_GRAPHQL_ENABLED_LOG_TYPES}
       ## uncomment next line to set an admin secret
       # HASURA_GRAPHQL_ADMIN_SECRET: '${HASURA_GRAPHQL_ADMIN_SECRET}'
-      ## set false to do manual [migration](https://docs.hasura.io/1.0/graphql/manual/migrations/existing-database.html)
-      HASURA_GRAPHQL_ENABLE_CONSOLE: ${HASURA_GRAPHQL_ENABLE_CONSOLE}
 volumes:
-  db_data:
+  postgres_data:
