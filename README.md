@@ -1,6 +1,6 @@
-# hasura-starter
+# ![hasura-starter](./asset/hasura-starter.svg)
 
-- A boilerplate for `docker-compose` and `migration`, setting development environment.
+- A boilerplate for `docker-compose` and `migrations`, setting development environment.
 - A cheetsheet for Hasura cli.
 - A guide for beginners.
 
