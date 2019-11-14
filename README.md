@@ -36,13 +36,13 @@ docker-compose up -d
 dotenv -e .env.dev -- docker-compose up -d
 ```
 
-Debug/Stop/Clear Postgres and Hasura.
+Stop/Debug/Clear Postgres and Hasura.
 
 ```bash
-# print logs on the terminal. Good for debugging.
-docker-compose up
 # stop hasura and postgres
 docker-compose down
+# print logs on the terminal. Good for debugging.
+docker-compose up
 # stop hasura and postgres, and remove docker volumes as well
 docker-compose down --volumes
 ```
@@ -136,7 +136,7 @@ That's why `5432` is hard-coded at `HASURA_GRAPHQL_DATABASE_URL` in [docker-comp
 
 ```yml
 environment:
-  HASURA_GRAPHQL_DATABASE_URL: "postgres://${DB_USERNAME}:${DB_PASSWORD}@db:5432/${DB_DATABASE}"
+  HASURA_GRAPHQL_DATABASE_URL: "postgres://${POSTGRES_USERNAME}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DATABASE}"
 ```
 
 ### Postgres exposure
