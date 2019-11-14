@@ -132,7 +132,7 @@ By given configuration, `8080` port is given to Hasura. To change it, you should
 
 By given configuration, Hasura and Postgres communicates each other by docker's [host mode networking](https://docs.docker.com/network/host).
 No matter how you configure `DB_ENDPOINT_PORT` from env file, Postgres is exposed to Hasura by `5432` port, the default value of Postgres image.
-That's why `5432` is hard-coded at `HASURA_GRAPHQL_DATABASE_URL` in [docker-compose.yml](docker-compose.yml). For the same reason, service name `db` is used rather than `localhost` on `HASURA_GRAPHQL_DATABASE_URL`.
+That's why `5432` is hard-coded at `HASURA_GRAPHQL_DATABASE_URL` in [docker-compose.yml](docker-compose.yml). For the same reason, service name `postgres` is used rather than `localhost` on `HASURA_GRAPHQL_DATABASE_URL`.
 
 ```yml
 environment:
