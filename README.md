@@ -124,10 +124,9 @@ Under [/hasura/migrations](/hasura/migrations), there is `1573631107183_init`. I
 
 ### Squash
 
-You can "squash" multiple migrations into one.
-There are [several steps](https://blog.hasura.io/resetting-hasura-migrations/) for you to take.
-But there has been [issues](e.g. [#2724](https://github.com/hasura/graphql-engine/issues/2724)) about inconvenience.
-For making it simple, community members developed a tool like [hasura-squasher](https://github.com/domasx2/hasura-squasher) and [manual workflow](https://github.com/hasura/graphql-engine/issues/2724#issuecomment-524547524).
+You can "squash" multiple migrations into one by taking [several steps](https://blog.hasura.io/resetting-hasura-migrations/).
+But there has been issues(e.g. [#2724](https://github.com/hasura/graphql-engine/issues/2724)) about inconvenience.
+To make it simple, community members developed a tool like [hasura-squasher](https://github.com/domasx2/hasura-squasher) and [manual workflow](https://github.com/hasura/graphql-engine/issues/2724#issuecomment-524547524).
 Finally, a new command `hasura migrate squash` is introduced with a new migration structure on `v1.0.0-beta.9`.
 As of writing(`v1.0.0-beta.10`), the command is still in preview. For more detail, check out the ([changelog](https://github.com/hasura/graphql-engine/releases/tag/v1.0.0-beta.9)).
 
