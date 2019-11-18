@@ -77,7 +77,7 @@ hasura --project hasura migrate apply
 hasura --project hasura migrate apply --up <NUMBER>
 # hasura:push:version => push a specific version of migration to Hasura
 hasura --project hasura migrate apply --version <VERSION>
-#
+# => mark an migration is applied, without actual execution. Check out "Squash" section under "Migration".
 hasura --project hasura migrate apply --skip-execution --version <VERSION>
 # hasura:rollback:count => roll back a given number of migration(s) from Hasura
 hasura --project hasura migrate apply --down <NUMBER>
@@ -91,7 +91,7 @@ Use `--endpoint` option for remote Hasura. The option overrides the default endp
 
 For practice, I recommend run migration commands against both local and remote Hasura. You can deploy an instance of Hasura by one(few)-click and free on Heroku. Refer to this very simple [Heroku deployment guide](https://docs.hasura.io/1.0/graphql/manual/getting-started/heroku-simple.html).
 
-```bash
+```sh
 # e.g. HASURA_ENDPOINT=http://another-graphql-instance.herokuapp.com
 hasura --project hasura --endpoint $HASURA_ENDPOINT migrate create --from-server <NAME_OF_SINGLE_MIGRATION>
 hasura --project hasura --endpoint $HASURA_ENDPOINT migrate apply
@@ -121,6 +121,15 @@ This projects assumes `migrations`(,which includes `metadata`) handled by Hasura
 ### [cli-migrations](https://docs.hasura.io/1.0/graphql/manual/migrations/auto-apply-migrations.html)
 
 Under [/hasura/migrations](/hasura/migrations), there is `1573631107183_init`. It's a sample migration which creates `User` table and make Hasura [`track`](https://docs.hasura.io/1.0/graphql/manual/schema/using-existing-database.html#step-1-track-tables-views) it. By given configuration, not plain `hasura/graphql-engine:<version>`, but `hasura/graphql-engine:<version>.cli-migrations` is used as docker image. It automatically applies migrations when Hasura starts. Remove `1573631107183_init` for your migrations.
+
+### Squash
+
+You can "squash" multiple migrations into one.
+There are [several steps](https://blog.hasura.io/resetting-hasura-migrations/) for you to take.
+But there has been [issues](e.g. [#2724](https://github.com/hasura/graphql-engine/issues/2724)) about inconvenience.
+For making it simple, community members developed a tool like [hasura-squasher](https://github.com/domasx2/hasura-squasher) and [manual workflow](https://github.com/hasura/graphql-engine/issues/2724#issuecomment-524547524).
+Finally, a new command `hasura migrate squash` is introduced with a new migration structure on `v1.0.0-beta.9`.
+As of writing(`v1.0.0-beta.10`), the command is still in preview. For more detail, check out the ([changelog](https://github.com/hasura/graphql-engine/releases/tag/v1.0.0-beta.9)).
 
 ## Networking
 
