@@ -77,7 +77,7 @@ hasura --project hasura migrate apply
 hasura --project hasura migrate apply --up <NUMBER>
 # hasura:push:version => push a specific version of migration to Hasura
 hasura --project hasura migrate apply --version <VERSION>
-# => mark an migration is applied, without actual execution. Check out "Squash" section under "Migration".
+# => mark an migration is applied, without actual execution. Check out "Squash" section under "Migrations".
 hasura --project hasura migrate apply --skip-execution --version <VERSION>
 # hasura:rollback:count => roll back a given number of migration(s) from Hasura
 hasura --project hasura migrate apply --down <NUMBER>
