@@ -116,11 +116,11 @@ hasura:rollback:version 1550925483858
 
 You don't need to execute `hasura init` by yourself, as migrations directory([/hasura/migrations](/hasura/migrations)) and the config file([/hasura/config.yaml](/hasura/config.yaml)) are already here.
 
-This projects assumes `migrations`(,which includes `metadata`) handled by Hasura. But you can choose another migration tool over Hasura. If so, you only need for Hasura to handle `metadata`. For that case, refer to [docs](https://docs.hasura.io/1.0/graphql/manual/migrations/manage-metadata.html) for more detail.
+This projects assumes `migrations`(,which includes `metadata`) handled by Hasura. But you can choose another migration tool over Hasura. If so, you only need Hasura to handle `metadata`. For that case, refer to [docs](https://docs.hasura.io/1.0/graphql/manual/migrations/manage-metadata.html) for more detail.
 
 ### [cli-migrations](https://docs.hasura.io/1.0/graphql/manual/migrations/auto-apply-migrations.html)
 
-Under [/hasura/migrations](/hasura/migrations), there is `1573631107183_init`. It's a sample migration which creates `User` table and make Hasura [`track`](https://docs.hasura.io/1.0/graphql/manual/schema/using-existing-database.html#step-1-track-tables-views) it. By given configuration, not plain `hasura/graphql-engine:<version>`, but `hasura/graphql-engine:<version>.cli-migrations` is used as docker image. It automatically applies migrations when Hasura starts. Remove `1573631107183_init` for your migrations.
+Under [/hasura/migrations](/hasura/migrations), there is `1573631107183_init`. It's a sample migration which creates `User` table and make Hasura [`track`](https://docs.hasura.io/1.0/graphql/manual/schema/using-existing-database.html#step-1-track-tables-views) it. By given configuration, not plain `hasura/graphql-engine:<version>`, but `hasura/graphql-engine:<version>.cli-migrations` is used as docker image. The image automatically applies migrations when Hasura starts. Remove `1573631107183_init` for your migrations.
 
 ### Squash
 
@@ -128,7 +128,7 @@ You can "squash" multiple migrations into one by taking [several steps](https://
 But there has been issues(e.g. [#2724](https://github.com/hasura/graphql-engine/issues/2724)) about inconvenience.
 To make it simple, community members developed a tool like [hasura-squasher](https://github.com/domasx2/hasura-squasher) and [manual workflow](https://github.com/hasura/graphql-engine/issues/2724#issuecomment-524547524).
 Finally, a new command `hasura migrate squash` is introduced with a new migration structure on `v1.0.0-beta.9`.
-As of writing(`v1.0.0-beta.10`), the command is still in preview. For more detail, check out the ([changelog](https://github.com/hasura/graphql-engine/releases/tag/v1.0.0-beta.9)).
+As of writing(`v1.0.0-beta.10`), the command is still in preview(not stable). For more detail, check out the [changelog](https://github.com/hasura/graphql-engine/releases/tag/v1.0.0-beta.9).
 
 ## Networking
 
