@@ -1,7 +1,7 @@
 # ![hasura-starter](./asset/hasura-starter.svg)
 
 - A boilerplate for `docker-compose` and `migrations`, setting development environment.
-- A cheatsheet for Hasura cli.
+- A cheatsheet for Hasura CLI.
 - A guide for beginners.
 
 [![license](https://img.shields.io/badge/license-MIT-ff4081.svg?style=flat-square&labelColor=black)](./LICENSE)
@@ -49,7 +49,7 @@ docker-compose down --volumes
 
 ## Cli Cheatsheet
 
-Here are `hasura` CLI cheatsheets for easy copy-and-paste. If you haven't used Cli, first be familar with [migrations](https://deploy-preview-3042--hasura-docs.netlify.com/graphql/manual/migrations/existing-database.html) concept.
+Here are `hasura` cli cheatsheets for easy copy-and-paste. If you haven't used cli, first be familar with [migrations](https://deploy-preview-3042--hasura-docs.netlify.com/graphql/manual/migrations/existing-database.html) concept.
 
 There are more available commands. Refer to [docs](https://docs.hasura.io/1.0/graphql/manual/hasura-cli/index.html) or `hasura <COMMAND> --help` for more detail.
 
