@@ -55,7 +55,7 @@ There are more available commands. Refer to [docs](https://docs.hasura.io/1.0/gr
 
 `--project` option specifies a directory hasura cli should target. If you go into the directory(`cd hasura`), you don't need to specify it.
 
-If you enabled `HASURA_GRAPHQL_ADMIN_SECRET`, then you should provide the env var (or the option `--admin-secret` <ADMIN_SECRET>) to the cli.
+If you enabled `HASURA_GRAPHQL_ADMIN_SECRET`, then you should provide the env var (or the option `--admin-secret <ADMIN_SECRET>`) to the cli.
 For convenience of development, just populate env file to your shell (maybe with a shell plugin like [`dotenv`](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/dotenv)), or use a tool like [`dotenv-cli`](https://github.com/entropitor/dotenv-cli).
 
 (Comments are my personal shorthand notation, which are not executable.)
@@ -177,7 +177,7 @@ Custom logics are to be integrated with Hasura-generated GraphQL, as a single en
 
 ## Event Trigger
 
-When an event(e.g. `INSERT`, `UPDATE`, `DELETE`) is occurred on a Postgres table, Hasura can invoke webhooks. Refer to [docs](https://deploy-preview-3042--hasura-docs.netlify.com/graphql/manual/event-triggers/index.html) for more detail.
+When an event(e.g. `INSERT`, `UPDATE`, `DELETE`) is occurred on a Postgres table, Hasura can invoke webhooks. Refer to [docs](https://docs.hasura.io/1.0/graphql/manual/event-triggers/index.html) for more detail.
 
 ## 3Factor App
 
