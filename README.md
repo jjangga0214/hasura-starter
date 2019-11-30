@@ -47,15 +47,15 @@ docker-compose up
 docker-compose down --volumes
 ```
 
-## Cli Cheatsheet
+## CLI Cheatsheet
 
-Here are `hasura` cli cheatsheets for easy copy-and-paste. If you haven't used cli, first be familar with [migrations](https://deploy-preview-3042--hasura-docs.netlify.com/graphql/manual/migrations/existing-database.html) concept.
+Here are `hasura` CLI cheatsheets for easy copy-and-paste. If you haven't used CLI, first be familar with [migrations](https://deploy-preview-3042--hasura-docs.netlify.com/graphql/manual/migrations/existing-database.html) concept.
 
 There are more available commands. Refer to [docs](https://docs.hasura.io/1.0/graphql/manual/hasura-cli/index.html) or `hasura <COMMAND> --help` for more detail.
 
-`--project` option specifies a directory hasura cli should target. If you go into the directory(`cd hasura`), you don't need to specify it.
+`--project` option specifies a directory Hasura CLI should target. If you go into the directory(`cd hasura`), you don't need to specify it.
 
-If you enabled `HASURA_GRAPHQL_ADMIN_SECRET`, then you should provide the env var (or the option `--admin-secret <ADMIN_SECRET>`) to the cli.
+If you enabled `HASURA_GRAPHQL_ADMIN_SECRET`, then you should provide the env var (or the option `--admin-secret <ADMIN_SECRET>`) to the CLI.
 For convenience of development, just populate env file to your shell (maybe with a shell plugin like [`dotenv`](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/dotenv)), or use a tool like [`dotenv-cli`](https://github.com/entropitor/dotenv-cli).
 
 (Comments are my personal shorthand notation, which are not executable.)
