@@ -6,7 +6,7 @@
 
 [![license](https://img.shields.io/badge/license-MIT-ff4081.svg?style=flat-square&labelColor=black)](./LICENSE)
 [![Hasura v1.0.0-beta.10](https://img.shields.io/badge/Hasura-v1.0.0--beta.10-18ffff.svg?style=flat-square&labelColor=black)](./docker-compose.yml)
-![pr welcome](https://img.shields.io/badge/PRs-welcome-09FF33.svg?style=flat-square&labelColor=black)
+[![pr welcome](https://img.shields.io/badge/PRs-welcome-09FF33.svg?style=flat-square&labelColor=black)](https://github.com/jjangga0214/hasura-starter/pulls)
 
 ## Before Getting Started
 
