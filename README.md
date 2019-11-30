@@ -120,7 +120,7 @@ This projects assumes `migrations`(,which includes `metadata`) handled by Hasura
 
 ### [cli-migrations](https://docs.hasura.io/1.0/graphql/manual/migrations/auto-apply-migrations.html)
 
-Under [/hasura/migrations](/hasura/migrations), there is `1573631107183_init`. It's a sample migration which creates `User` table and make Hasura [`track`](https://docs.hasura.io/1.0/graphql/manual/schema/using-existing-database.html#step-1-track-tables-views) it. By given configuration, not plain `hasura/graphql-engine:<version>`, but `hasura/graphql-engine:<version>.cli-migrations` is used as docker image. The image automatically applies migrations when Hasura starts. Remove `1573631107183_init` for your migrations.
+Under [/hasura/migrations](/hasura/migrations), there is `1573631107183_init`. It's a sample migration which creates `User` table and make Hasura [`track`](https://docs.hasura.io/1.0/graphql/manual/schema/using-existing-database.html#step-1-track-tables-views) it. By the given configuration, not plain `hasura/graphql-engine:<version>`, but `hasura/graphql-engine:<version>.cli-migrations` is used as docker image. The image automatically applies migrations when Hasura starts. Remove `1573631107183_init` for your migrations.
 
 ### Squash
 
@@ -134,11 +134,11 @@ As of writing(`v1.0.0-beta.10`), the command is still in preview(not stable). Fo
 
 ### Sync Hasura port
 
-By given configuration, `8080` port is given to Hasura. To change it, you should sync the port number specified in [hasura/config.yaml](hasura/config.yaml) and `HASURA_ENDPOINT_PORT` in your env file.
+By the given configuration, `8080` port is given to Hasura. To change it, you should sync the port number specified in [hasura/config.yaml](hasura/config.yaml) and `HASURA_ENDPOINT_PORT` in your env file.
 
 ### Host networking
 
-By given configuration, Hasura and Postgres communicates each other by docker's [host mode networking](https://docs.docker.com/network/host).
+By the given configuration, Hasura and Postgres communicates each other by docker's [host mode networking](https://docs.docker.com/network/host).
 No matter how you configure `DB_ENDPOINT_PORT` from env file, Postgres is exposed to Hasura by `5432` port, the default value of Postgres image.
 That's why `5432` is hard-coded at `HASURA_GRAPHQL_DATABASE_URL` in [docker-compose.yml](docker-compose.yml). For the same reason, service name `postgres` is used rather than `localhost` on `HASURA_GRAPHQL_DATABASE_URL`.
 
@@ -149,7 +149,7 @@ environment:
 
 ### Postgres exposure
 
-By given configuration, Postgres is exposed to the host(your OS) by the port of `DB_ENDPOINT_PORT` from env file. This is useful on development as you can directly access to Postgres without Hasura. However, if you want to use [docker-compose.yml](docker-compose.yml) on production (e.g. `docker swarm` for `docker-compose`), you might reconsider how you should configure it.
+By the given configuration, Postgres is exposed to the host(your OS) by the port of `DB_ENDPOINT_PORT` from env file. This is useful on development as you can directly access to Postgres without Hasura. However, if you want to use [docker-compose.yml](docker-compose.yml) on production (e.g. `docker swarm` for `docker-compose`), you might reconsider how you should configure it.
 
 ## Seed Data
 
