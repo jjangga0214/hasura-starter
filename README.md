@@ -1,3 +1,4 @@
+
 # ![hasura-starter](./asset/hasura-starter.svg)
 
 - A boilerplate for `docker-compose` and `migrations`, setting development environment.
@@ -160,7 +161,7 @@ As an another workaround, you can write a little program that calls GraphQL muta
 For example, if you use node.js,
 
 ```bash
-docker-compose up && node seed.js
+docker-compose up -d && node seed.js
 ```
 
 Of course, the program should watches (e.g. continuous health check polling) Hasura endpoint to make sure migrations are completed before inputting data.
