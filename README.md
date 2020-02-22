@@ -6,7 +6,7 @@
 - A guide for beginners.
 
 [![license](https://img.shields.io/badge/license-MIT-ff4081.svg?style=flat-square&labelColor=black)](./LICENSE)
-[![Hasura v1.0.0](https://img.shields.io/badge/Hasura-v1.0.0-18ffff.svg?style=flat-square&labelColor=black)](./docker-compose.yml)
+[![Hasura v1.1.0](https://img.shields.io/badge/Hasura-v1.1.0-18ffff.svg?style=flat-square&labelColor=black)](./docker-compose.yml)
 [![pr welcome](https://img.shields.io/badge/PRs-welcome-09FF33.svg?style=flat-square&labelColor=black)](https://github.com/jjangga0214/hasura-starter/pulls)
 
 ## Before Getting Started
@@ -129,7 +129,7 @@ You can "squash" multiple migrations into one by taking [several steps](https://
 But there has been issues(e.g. [#2724](https://github.com/hasura/graphql-engine/issues/2724)) about inconvenience.
 To make it simple, community members developed a tool like [hasura-squasher](https://github.com/domasx2/hasura-squasher) and [manual workflow](https://github.com/hasura/graphql-engine/issues/2724#issuecomment-524547524).
 Finally, a new command `hasura migrate squash` is introduced with a new migration structure on `v1.0.0-beta.9`.
-As of writing(`v1.0.0`), the command is still in preview(not stable). For more detail, check out the [changelog](https://github.com/hasura/graphql-engine/releases/tag/v1.0.0-beta.9).
+As of writing(`v1.1.0`), the command is still in preview(not stable). For more detail, check out the [changelog](https://github.com/hasura/graphql-engine/releases/tag/v1.0.0-beta.9).
 
 ## Networking
 

@@ -20,7 +20,7 @@ services:
       # - ./data:/docker-entrypoint-initdb.d
       - postgres_data:/var/lib/postgresql/data
   graphql-engine:
-    image: hasura/graphql-engine:v1.0.0.cli-migrations
+    image: hasura/graphql-engine:v1.1.0.cli-migrations
     ports:
       - target: 8080
         published: ${HASURA_ENDPOINT_PORT}
